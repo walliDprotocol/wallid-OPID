@@ -1,0 +1,29 @@
+{
+  "name": "storeID",
+  "version": "0.0.0",
+  "private": true,
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "pm2 start app.js -n storeID",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon start app.js"
+  },
+  "dependencies": {
+    "async": "^2.6.1",
+    "body-parser": "^1.18.3",
+    "buffer": "^5.2.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.13",
+    "morgan": "^1.9.1",
+    "pug": "^2.0.3",
+    "uniqid": "^5.0.3"
+  },
+  "author": "Jose Reis",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.6"
+  }
+}
