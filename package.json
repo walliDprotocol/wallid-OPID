@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "async": "^2.6.1",
+    "big-integer": "^1.6.36",
     "body-parser": "^1.18.3",
     "buffer": "^5.2.1",
     "cookie-parser": "^1.4.3",

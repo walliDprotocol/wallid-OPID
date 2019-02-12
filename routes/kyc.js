@@ -4,6 +4,7 @@ const express = require('express');
 const router = express.Router();
 const conn = require('./../models/kyc');
 const uniqid = require('uniqid');
+const bigInt = require('big-integer');
 
 router.post('/payment', function(req, res, next) {
 	let criteria = {
@@ -26,7 +27,9 @@ router.post('/', function(req, res, next) {
 	}
 
 	let body = JSON.parse(JSON.stringify(criteria));
-	body.opid = uniqid();
+	// body.opid = uniqid();
+	let limit = bigInt(2).pow(256);
+	body.opid = bigInt.randBetween(1, limit);
 
 	conn.addOrUpdateInfo(criteria, body, function(err, result) {
 		if (err) return res.status(500).send({ 'data': null, 'message': err });
