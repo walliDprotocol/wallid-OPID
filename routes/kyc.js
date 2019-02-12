@@ -9,6 +9,8 @@ const bigInt = require('big-integer');
 router.post('/payment', function(req, res, next) {
 	console.log('body: ', req.body);
 
+	if (req.body.idt == null || req.body.wa == null) return res.status(400).send({ 'data': null, 'message': 'Must be sent idt and wallet address' });
+
 	let criteria = {
 		idt: req.body.idt,
 		wa: req.body.wa
@@ -26,6 +28,8 @@ router.post('/payment', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
 	console.log('body: ', req.body);
+
+	if (req.body.idt == null || req.body.wa == null) return res.status(400).send({ 'data': null, 'message': 'Must be sent idt and wallet address' });
 
 	let criteria = {
 		idt: req.body.idt,
