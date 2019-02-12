@@ -8,7 +8,7 @@ url += process.env.DB_HOST + ':';
 url += process.env.DB_PORT + '/';
 url += process.env.DB_NAME;
 url += '?authSource=admin';
-url += '?&replicaSet=' + process.env.REPL_SET;
+url += '&replicaSet=' + process.env.REPL_SET;
 
 mongoose.connect(url, { useNewUrlParser: true })
 .then(_ => {
